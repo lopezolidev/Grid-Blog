@@ -1,0 +1,105 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+    font-family: 'Silkscreen', cursive;
+}
+
+a {
+    text-decoration: none;
+    display: inline;
+    color: black;
+}
+header {
+    width: 100%;
+    height: 14rem;
+    /* preferi usar rem para no tener medidas absolutas en pixeles */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+header .header-icon-container {
+    width: 100%;
+    height: auto;
+    /* cambié el height a auto par que ocupe todo el espacio disponible en esta parte de la grilla */
+    display: grid;
+    background-color:#302988;
+}
+
+header .header-icon-container .icons {
+    width: 30rem;
+    height: auto;
+    display: flex;
+    justify-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: end;
+    margin-right: 2rem;
+}
+header .icons span {
+    color: white;
+}
+
+/* Nav */
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height:  auto;
+    background-color: #4660b5;
+}
+
+nav .nav-logo-container {
+    place-self: center start;
+    /* en vez de darle paddings preferí emplear esta propiedad de grid */
+    margin-left: 5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav .nav-logo-container img {
+    width: 6rem;
+    /* no señale el margin-top porque no me parecio necesario al tener la propiedad de align-self de grid */
+}
+
+nav .nav-logo-container a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+nav .profile-link {
+    place-self: center end;
+    /* hice lo mismo con este elemento */
+    margin-right: 5rem;
+}
+
+nav .profile-link a {
+    color: white;
+    font-size: 1.8rem;
+    border-bottom: 0.1rem solid white;
+}
+/* Main */
+.blog-main {
+    display: grid;
+    grid-template-rows: 10rem calc(100vh - 24rem);
+    grid-template-columns: 1fr 4fr 1fr;
+}
+
+.blog-main .first-blog {
+    grid-column: 2;
+    align-self: center;
+    display: flex;
+    gap: 1.6rem;
+}
+
+.blog-main .blog-list {
+    grid-column: 2;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-auto-rows: auto;
+    gap: 4rem;
+}
