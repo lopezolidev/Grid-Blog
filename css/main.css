@@ -6,13 +6,16 @@
 
 html {
     font-size: 62.5%;
+    font-family: 'Silkscreen', cursive;
 }
 body {
-    position: fixed;
-    top: 0;
-    bottom: 0;
-    left: 0;
-    right: 0;
+    width: 100vw;
+    height: 100vh;
+    background-image: url('https://cutewallpaper.org/21/2560x1440-wallpapers/240727905.jpg');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* el background-size:cover nos permite que la imagen no carge completa sino que se ajuste al tamaño del contenedor */
 }
 a {
     text-decoration: none;
@@ -28,9 +31,10 @@ header {
 }
 header .header-icon-container {
     width: 100%;
-    height: 5rem;
+    height: auto;
+    /* cambié el height a auto par que ocupe todo el espacio disponible en esta parte de la grilla */
     display: grid;
-    background-color: #47cfac;
+    background-color:transparent;
 }
 
 header .header-icon-container .icons {
@@ -43,3 +47,88 @@ header .header-icon-container .icons {
     justify-self: end;
     margin-right: 2rem;
 }
+header .icons span {
+    color: white;
+}
+
+/* Nav */
+
+nav {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    height:  auto;
+    background-color: transparent;
+}
+
+nav .nav-logo-container {
+    place-self: center start;
+    /* en vez de darle paddings preferí emplear esta propiedad de grid */
+    margin-left: 5rem;
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+nav .nav-logo-container img {
+    width: 6rem;
+    /* no señale el margin-top porque no me parecio necesario al tener la propiedad de align-self de grid */
+}
+
+nav .nav-logo-container a {
+    color: white;
+    text-transform: uppercase;
+    font-size: 2rem;
+}
+nav .profile-link {
+    place-self: center end;
+    /* hice lo mismo con este elemento */
+    margin-right: 5rem;
+}
+
+nav .profile-link a {
+    color: white;
+    font-size: 1.8rem;
+    border-bottom: 0.1rem solid white;
+}
+
+/* Main */
+
+.home-main {
+    height: calc(100vh - 14rem);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    /* el profe utilizo: 
+    display: grid;
+    grid-template-columns: 1fr 4fr 1fr;
+    height: 100%;
+    esto lo cambié por display flex para que fuese mas sencillo centrar y manejar los elementos sin preocuparme por espaciado, columnas o margenes */
+}
+
+/* el profe utilizo una etiqueta section con los siguientes estilos: 
+.home-main section {
+    display: grid; 
+    grid-column: 2; esto fue para ubicar este contenedor en la segunda columna de la grilla
+    justify-content: center;
+    height: 350px;
+    margin-top: 80px;
+} 
+    personalmente no me gustan tanto estos estilos por lo complicado para centrar y espaciar el contenido, sin embargo el uso de grid puede facilitar esto*/
+.home-main h1 {
+    color: white;
+    font-size: 8rem;
+    letter-spacing: 0.2rem;
+    /* esta propiedad sirve para el espaciado entre las letras de un texto */
+}
+
+.home-main a {
+    padding: 2rem 4rem;
+    border: none;
+    background-color: rgb(0, 255, 255);
+    border-radius: 2rem;
+    font-size: 2.4rem;
+    font-family: 'Silkscreen', cursive;
+    color: white;
+}
+
