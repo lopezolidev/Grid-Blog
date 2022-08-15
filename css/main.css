@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+}
+a {
+    text-decoration: none;
+    display: inline;
+    color: black;
+}
+header {
+    width: 100%;
+    height: 14rem;
+    /* preferi usar rem para no tener medidas absolutas en pixeles */
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+}
+header .header-icon-container {
+    width: 100%;
+    height: 5rem;
+    display: grid;
+    background-color: #47cfac;
+}
+
+header .header-icon-container .icons {
+    width: 30rem;
+    height: auto;
+    display: flex;
+    justify-items: flex-end;
+    align-items: center;
+    justify-content: space-between;
+    justify-self: end;
+    margin-right: 2rem;
+}
