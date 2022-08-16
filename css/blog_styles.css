@@ -83,17 +83,67 @@ nav .profile-link a {
     border-bottom: 0.1rem solid white;
 }
 /* Main */
+
+.grid-container {
+    max-width: 140rem;
+    margin: auto;
+}
+
 .blog-main {
     display: grid;
-    grid-template-rows: 10rem calc(100vh - 24rem);
-    grid-template-columns: 1fr 4fr 1fr;
+    grid-template-rows: 40rem auto;
+    row-gap: 4rem;
+    margin-bottom: 4rem;
 }
 
 .blog-main .first-blog {
     grid-column: 2;
     align-self: center;
     display: flex;
-    gap: 1.6rem;
+    align-items: center;
+    /* aquí el profesor empleado display grid para ubicar los elementos del contenedor dentro de una cuadricula, en vez de display flex */
+    height: 100%;
+    width: 100%;
+    background-color: #e6e9ed;
+    padding: 4rem;
+}
+.blog-main .first-blog figure {
+    width: 100%;
+    height: 100%;
+}
+
+.blog-main .first-blog figure img {
+    object-fit: contain;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-main .first-blog div {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+    gap: 4rem;
+}
+.blog-main .first-blog div h2 {
+    font-size: 3rem;
+}
+
+.blog-main .first-blog div a, .blog-list .blogpost-item a{
+    padding: 1rem 1.6rem; 
+    font-size: 1rem;
+    border: 0.1rem solid #48CFAD;
+    width: 8rem;
+    text-align: center;
+}
+
+.blog-main .first-blog div a:hover, .blog-list .blogpost-item a:hover {
+    border: 0.1rem solid white;
+    color: white;
+    background-color: #48CFAD;
+
 }
 
 .blog-main .blog-list {
@@ -101,5 +151,52 @@ nav .profile-link a {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-auto-rows: auto;
-    gap: 4rem;
+    gap: 2rem;
+    padding-left: 8rem;
+    padding-right: 8rem;
+}
+
+
+.blog-list .blogpost-item {
+    display: grid;
+    grid-template-rows: 18rem 4rem 12rem 0.2fr;
+    justify-items: center;
+}
+
+.blog-list .blogpost-item img {
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.blog-list .blogpost-item h3 {
+    align-self: center;
+    justify-self: start;
+}
+.blog-list .blogpost-item p {
+    align-self: center;
+}
+
+.blog-list .blogpost-item a {
+    justify-self: flex-start;
+    width: 8rem;
+    padding: 1rem;
+    text-align: center;
+    align-self: center;
+}
+
+/* footer styles */
+
+footer {
+    width: 100%;
+    height: 9rem;
+    background-color: #22272d;
+    border-top: 3rem solid #47cfac;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+footer p {
+    color: white;
+    font-size: 1rem;
 }
